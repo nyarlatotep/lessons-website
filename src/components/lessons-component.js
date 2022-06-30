@@ -103,10 +103,10 @@ export class Lessons extends Component {
 		return (
 			<>
 				<div id='principal-div'>
-					<aside id='menu-aside' style={ { marginLeft: this.state.marginLeft } }
-						onMouseLeave={ ( e ) => this.handle_mouseLeave( e ) }
-						onMouseOver={ ( e ) => this.handle_mouseOver( e ) }>
-						<nav>
+					<aside id='menu-aside'>
+						<nav style={ { marginLeft: this.state.marginLeft } }
+							onMouseLeave={ ( e ) => this.handle_mouseLeave( e ) }
+							onMouseOver={ ( e ) => this.handle_mouseOver( e ) }>
 							<menu>
 
 								<button type='button' onClick={ this.handle_audio } className='menu-btn'>
@@ -114,7 +114,7 @@ export class Lessons extends Component {
 								</button>
 								{ ' ' }
 								<button type='button' onClick={ this.handle_exercises } className='menu-btn'>
-									Ejercici{ '  ' }<FontAwesomeIcon color='rgb(20 95 179)' icon={ faSchool } />
+									Ejerci.{ '  ' }<FontAwesomeIcon style={ { marginLeft: 7 } } color='rgb(180 225 49)' icon={ faSchool } />
 								</button>
 								{ ' ' }
 								<button type='button' onClick={ this.handle_listVerb } className='menu-btn'>

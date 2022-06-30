@@ -6,7 +6,7 @@ import { Header } from './principal';
 import { Lessons } from './lessons-component'
 
 import { faMountainSun, faCloudMoonRain } from '@fortawesome/free-solid-svg-icons';
-import { faDog, faDolly, faStar, faHandsBubbles, faTextHeight, faQuidditchBroomBall } from '@fortawesome/free-solid-svg-icons';
+import { faDog, faDolly, faStar, faHandsBubbles, faFileText, faQuidditchBroomBall } from '@fortawesome/free-solid-svg-icons';
 import { faNoteSticky } from '@fortawesome/free-regular-svg-icons';
 
 export class Main extends Component {
@@ -58,9 +58,11 @@ export class Main extends Component {
 				res = 'Tests';
 				break;
 			default:
-				res;
+				res = this.state.page;
 		}
 		this.setState( { page: res } );
+
+		ev.preventDefault();
 	};
 
 	componentDidUpdate = () => this.handle_section;
@@ -75,13 +77,15 @@ export class Main extends Component {
 			body.style.backgroundColor = Themes.dark.bodyTheme.backgroundColor;
 
 		const data = [
-			{ key: 1, name: 'Present', icon: <FontAwesomeIcon icon={ faDog } /> },
-			{ key: 2, name: 'Past', icon: <FontAwesomeIcon icon={ faDolly } /> },
-			{ key: 3, name: 'Future', icon: <FontAwesomeIcon icon={ faStar } /> },
-			{ key: 4, name: 'Grammar', icon: <FontAwesomeIcon icon={ faHandsBubbles } /> },
-			{ key: 5, name: 'Texts', icon: <FontAwesomeIcon icon={ faTextHeight } /> },
-			{ key: 6, name: 'Notes', icon: <FontAwesomeIcon icon={ faNoteSticky } /> },
-			{ key: 7, name: 'Tests', icon: <FontAwesomeIcon icon={ faQuidditchBroomBall } /> },
+			{
+				key: 1, name: 'Present', icon: <FontAwesomeIcon style={ { width: 12, height: 12 } } name='Present' icon={ faDog } />
+			},
+			{ key: 2, name: 'Past', icon: <FontAwesomeIcon style={ { width: 12, height: 12 } } name='Past' icon={ faDolly } /> },
+			{ key: 3, name: 'Future', icon: <FontAwesomeIcon style={ { width: 12, height: 12 } } name='Future' icon={ faStar } /> },
+			{ key: 4, name: 'Grammar', icon: <FontAwesomeIcon style={ { width: 12, height: 12 } } name='Grammar' icon={ faHandsBubbles } /> },
+			{ key: 5, name: 'Texts', icon: <FontAwesomeIcon style={ { width: 12, height: 12 } } name='Texts' icon={ faFileText } /> },
+			{ key: 6, name: 'Notes', icon: <FontAwesomeIcon style={ { width: 12, height: 12 } } name='Notes' icon={ faNoteSticky } /> },
+			{ key: 7, name: 'Tests', icon: <FontAwesomeIcon style={ { width: 12, height: 12 } } name='Tests' icon={ faQuidditchBroomBall } /> },
 		];
 		/* Toogle theme button that uses context to propagate the theme to the worth page */
 		const Button =
