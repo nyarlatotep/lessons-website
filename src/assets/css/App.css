@@ -1,0 +1,341 @@
+*, ::after, ::before {
+	box-sizing: border-box;
+	zoom: 1;
+}
+
+body {
+	margin: auto;
+	height: auto;
+}
+
+button {
+	cursor: pointer;
+}
+
+h1, h2, h3 {
+	/*font-family: Aclonica;*/
+	font-family: Annie;
+	/*	font-family: PetitScript;*/
+	/*font-family: UnicaOne;*/
+}
+
+h2 {
+	background-color: rgb(188 145 30 / 85%);
+	border-radius: 33px;
+	font-size: 28px;
+	height: 45px;
+	margin-block: 10px 25px;
+	margin-inline: 80px 0;
+	padding-block: 10px;
+	text-align: center;
+	width: 1000px;
+}
+
+h3 {
+	background-color: rgb(188 100 100);
+	border-radius: 65px;
+	font-size: 21px;
+	font-weight: 900;
+	margin-inline: 30% 0;
+	text-align: center;
+	width: 200px;
+}
+
+li {
+	list-style: none;
+}
+
+#app-header {
+	border-radius: 5px 5px 14px 15px;
+	display: flex;
+	flex: 0 1 50%;
+	flex-flow: row nowrap;
+	height: 50px;
+	justify-content: space-between;
+	margin-block: 2px;
+	margin-inline: 3px;
+}
+
+.header-aside {
+	width: 50%;
+}
+
+#header-aside-lt > p {
+	font-size: 23px;
+	font-family: Aclonica;
+	/*font-family: Annie;*/
+	/*font-family: FugazOne;*/
+	/*font-family: PetitScript;*/
+	/*font-family: UnicaOne;*/
+	text-indent: 10px;
+	margin-block: 20px 0;
+}
+
+#aside-rt-nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#header-menu {
+	position: relative;
+	right: 30px;
+	top: 10px;
+}
+
+	#header-menu > button {
+		border: 0;
+		border-left: 1px #69a outset;
+		border-radius: 7px 7px 0 0;
+		border-right: 1px #69a inset;
+		border-top: 2px #69e outset;
+		height: 23px;
+		width: 40px;
+	}
+
+		#header-menu > button > svg {
+			position: sticky;
+			user-select: none;
+			z-index: 0;
+		}
+
+#theme-btn {
+	border-top: 3px rgb(150 160 160 / 90%) groove;
+	border-bottom: 3px rgb(150 160 160 / 90%) ridge;
+	border-left: 3px rgb(150 160 160 / 90%) groove;
+	border-right: 3px rgb(150 160 160 / 90%) ridge;
+	border-radius: 15px;
+	font-size: 10px;
+	height: 30px;
+	right: 5px;
+	padding-block: 0 1px;
+	padding-inline: 1px 1.5px;
+	position: relative;
+	top: 15px;
+	text-align: center;
+	width: 30px;
+}
+
+.description {
+	border: 3px #9879 solid;
+	border-radius: 66px 60px 30px 30px;
+	margin: auto;
+	margin-top: 0px;
+	position: inherit;
+}
+
+	.description > h1 {
+		background-color: rgb(120 100 167 / 45%);
+		border-radius: 15px;
+		margin-block: 0;
+		margin-inline: 200px 0;
+		padding-block: 15px 10px;
+		text-indent: 45px;
+		width: 800px;
+	}
+
+#principal-div {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	position: relative;
+	order: 2;
+}
+
+#menu-aside {
+	background-color: rgb(100 120 120 / 75%);
+	border: 3px #888 solid;
+	border-left: 0;
+	border-radius: 5px 40px 40px 5px;
+	box-shadow: 0px 0px 2px #777;
+	height: auto;
+	min-height: 700px;
+	order: 1;
+	width: 150px;
+	min-width: 150px;
+	margin-inline: 0 0px;
+}
+
+	#menu-aside > nav {
+		background-color: rgb(10 188 100 / 50%);
+		border-bottom: 2.5px rgb(68 170 0 /60%) outset;
+		border-radius: 5px 35px 30px 5px;
+		border-right: 3px rgb(68 170 0 / 50%) outset;
+		border-top: 2.5px rgb(68 170 0 /60%) inset;
+		display: flex;
+		flex: 1 auto;
+		flex-flow: column nowrap;
+		height: 300px;
+		margin: 0;
+		margin-block: 100px;
+		padding-block: 0px;
+		position: fixed;
+		width: 100px;
+	}
+
+		#menu-aside > nav > menu {
+			align-items: baseline;
+			display: flex;
+			flex-flow: column;
+			height: 300px;
+			justify-content: space-evenly;
+			margin: auto;
+			position: absolute;
+			padding-block: 0 10px;
+			padding-inline: 0;
+			width: max-content;
+		}
+
+.menu-btn {
+	background-color: rgb(85 103 205 / 34%);
+	border-bottom: 2px inset #eea9;
+	border-inline: 1px #eec9 groove;
+	border-radius: 0px 20px 20px 0px;
+	border-top: 2px outset #eea9;
+	font-size: 16px;
+	height: 30px;
+	margin-block: 0;
+	width: 90px;
+}
+
+#content-div {
+	align-content: center;
+	align-items: center;
+	float: right;
+	margin-inline: 15px;
+	order: 2;
+	padding-inline: 5px;
+	width: 1200px;
+}
+
+#article-description {
+	background-color: rgb(60 159 127 / 20%);
+	flex-flow: column wrap;
+	height: auto;
+}
+
+#article-description-two,
+#article-description-three,
+#article-description-four {
+	background-color: rgb(60 127 159 / 20%);
+	flex-flow: row wrap;
+	height: auto;
+}
+
+#article-description,
+#article-description-two,
+#article-description-three,
+#article-description-four {
+	border-radius: 100px;
+	box-shadow: 0 0 5px #666;
+	display: flex;
+	font-size: 19px;
+	margin-block: 10px;
+	margin-inline: 21px;
+	padding-block: 25px;
+	padding-inline: 25px 0;
+	width: 1150px;
+}
+
+#description-div-one,
+#description-div-two {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+#div-one-aside-one,
+#div-two-aside-one,
+#div-one-aside-two,
+#div-two-aside-two {
+	border-radius: 50px;
+	width: 285px;
+}
+
+#div-one-aside-one,
+#div-two-aside-one {
+	background-color: rgb(30 134 50 / 60%)
+}
+
+#div-one-aside-two,
+#div-two-aside-two {
+	background-color: rgb(40 74 130 / 60%)
+}
+
+#description-div-one > aside,
+#description-div-two > aside {
+	font-size: 17px;
+	text-indent: 15px;
+	text-align: center;
+	width: calc(990px / 2);
+}
+
+.custom-p {
+	width: 1060px;
+}
+
+.custom-ul {
+	background-color: rgb(195 110 155 / 50%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	#theme-btn > svg {
+		animation: App-svg-spin infinite 4s linear;
+	}
+}
+
+@keyframes App-svg-spin {
+	0% {
+		transform: rotateY(0deg);
+	}
+
+	25% {
+		transform: rotateY(90deg);
+	}
+
+	50% {
+		transform: rotateY(180deg);
+	}
+
+	75% {
+		transform: rotateY(270deg);
+	}
+
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+
+@font-face {
+	src: /*format('truetype')*/ url(../fonts/Aclonica-Regular.ttf);
+	font-family: Aclonica;
+}
+
+@font-face {
+	src: /* format('truetype')*/ url(../fonts/AnnieUseYourTelescope-Regular.ttf);
+	font-family: Annie;
+}
+
+@font-face {
+	src: /* format('truetype')*/ url(../fonts/ArchivoBlack-Regular.ttf);
+	font-family: ArchivoBlack;
+}
+
+@font-face {
+	src: /*format('truetype')*/ url(../fonts/FugazOne-Regular.ttf);
+	font-family: FugazOne;
+}
+
+@font-face {
+	src: /*format('truetype')*/ url(../fonts/PetitFormalScript-Regular.ttf);
+	font-family: PetitScript;
+}
+
+@font-face {
+	src: /*format('truetype')*/ url(../fonts/SecularOne-Regular.ttf);
+	font-family: SecularOne;
+}
+
+@font-face {
+	src: /*format('truetype')*/ url(../fonts/UnicaOne-Regular.ttf);
+	font-family: UnicaOne;
+}
