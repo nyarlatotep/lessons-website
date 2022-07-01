@@ -12,7 +12,7 @@ button {
 	cursor: pointer;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	/*font-family: Aclonica;*/
 	font-family: Annie;
 	/*	font-family: PetitScript;*/
@@ -20,7 +20,7 @@ h1, h2, h3 {
 }
 
 h2 {
-	background-color: rgb(188 145 30 / 85%);
+	background-color: hsl(61 100% 56% / 80%);
 	border-radius: 33px;
 	font-size: 28px;
 	height: 45px;
@@ -32,17 +32,27 @@ h2 {
 }
 
 h3 {
-	background-color: rgb(188 100 100);
+	background-color: rgb(228 100 100);
 	border-radius: 65px;
-	font-size: 21px;
+	font-size: 26px;
 	font-weight: 900;
 	margin-inline: 30% 0;
 	text-align: center;
 	width: 200px;
 }
 
+h4 {
+	background-color: rgb(167 187 70 / 45%);
+	border-radius: 20px;
+	font-size: 24px;
+	margin-left: 10px;
+	text-indent: 55px;
+	width: 300px;
+}
+
 li {
 	list-style: none;
+	margin-block: 5px;
 }
 
 #app-header {
@@ -54,7 +64,7 @@ li {
 	justify-content: space-between;
 	margin-block: 2px;
 	margin-inline: 3px;
-	min-width:1200px
+	min-width: 1200px
 }
 
 .header-aside {
@@ -143,7 +153,7 @@ li {
 
 	@media(min-width: 270px) {
 		#app-header {
-		max-width: 200px
+			max-width: 200px
 		}
 	}
 }
@@ -166,13 +176,16 @@ li {
 	order: 2;
 }
 
-#menu-aside {
+.menu-aside {
 	background-color: rgb(100 120 120 / 35%);
 	border: 3px #8884 solid;
 	border-left: 0;
 	border-radius: 5px 40px 40px 5px;
 	box-shadow: 0px 0px 2px #777;
+	display: flex;
+	flex-flow: column nowrap;
 	height: auto;
+	justify-content: space-between;
 	min-height: 735px;
 	order: 1;
 	width: 110px;
@@ -180,7 +193,7 @@ li {
 	position: static;
 }
 
-	#menu-aside > nav {
+	.menu-aside > nav {
 		background-color: rgb(10 188 100 / 50%);
 		border-bottom: 2.5px rgb(68 170 0 /60%) outset;
 		border-radius: 5px 35px 30px 5px;
@@ -197,18 +210,22 @@ li {
 		width: 100px;
 	}
 
-		#menu-aside > nav > menu {
-			align-items: baseline;
-			display: flex;
-			flex-flow: column;
-			height: 300px;
-			justify-content: space-evenly;
-			margin: auto;
-			position: absolute;
-			padding-block: 0 10px;
-			padding-inline: 0;
-			width: max-content;
-		}
+#nav-aside-menu {
+	margin-top: 100px;
+}
+
+.menu-aside > nav > menu {
+	align-items: baseline;
+	display: flex;
+	flex-flow: column;
+	height: 300px;
+	justify-content: space-evenly;
+	margin: auto;
+	position: absolute;
+	padding-block: 0 10px;
+	padding-inline: 0;
+	width: max-content;
+}
 
 .menu-btn {
 	background-color: rgb(85 103 205 / 34%);
@@ -229,7 +246,7 @@ li {
 	margin-inline: 15px;
 	order: 2;
 	padding-inline: 5px;
-	width: 1200px;
+	width: 1300px;
 }
 
 #article-description {
@@ -258,7 +275,7 @@ li {
 	margin-inline: 21px;
 	padding-block: 25px;
 	padding-inline: 25px 0;
-	width: 1150px;
+	width: 1245px;
 }
 
 #description-div-one,
@@ -294,13 +311,69 @@ li {
 	width: calc(990px / 2);
 }
 
+.description-h3 {
+	background-color: rgb(188 100 100);
+	border-radius: 65px;
+	font-size: 26px;
+	font-weight: 900;
+	margin-inline: 30% 0;
+	padding: 10px;
+	text-align: center;
+	width: 400px;
+}
+
 .custom-p {
 	width: 1060px;
 }
 
 .custom-ul {
-	background-color: rgb(195 110 155 / 50%);
+	align-items: flex-start;
+	background-color: rgb(195 110 155 / 20%);
+	border-radius: 25px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
+	width: 1050px;
+	word-break: keep-all;
+	line-break: strict;
 }
+
+#exercises-section {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.instructions {
+	background-color: rgb(178 120 10 / 45%);
+	font-size: 20px;
+	margin-left: 10px;
+	text-align: center;
+	text-indent: 55px;
+	width: 800px;
+}
+
+#exercises-section > ol {
+	width: 50%;
+}
+
+.exercises-li {
+	font-size: 18px;
+	list-style: inherit;
+	margin-block: 15px;
+	/*font-family: PetitScript;*/
+	font-family: SecularOne;
+}
+
+	.exercises-li > label :first-child,
+	.exercises-li > label :last-child,
+	.exercises-li > label :nth-last-child(-n+2) {
+		border: 0;
+		border-radius: 15px;
+		border-bottom: 2px #666 solid;
+		box-shadow: 0 -2px 0px #6669;
+		padding: 4px;
+		width: 75px;
+	}
 
 @media (prefers-reduced-motion: no-preference) {
 	#theme-btn > svg {

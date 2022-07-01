@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileAudio, faSchool, faList } from '@fortawesome/free-solid-svg-icons';
+import { faFileAudio, faSchool, faList, faQuestion} from '@fortawesome/free-solid-svg-icons';
 
 import { Present } from '../lessons/present';
 import { Past } from '../lessons/past';
@@ -18,9 +18,10 @@ export class Lessons extends Component {
 
 		this.state = {
 			hide_exercises: true,
-			hide_audio: false,
-			hide_verb: false,
-			marginLeft: -61
+			hide_audio: true,
+			hide_verb: true,
+			marginLeft: -61,
+			interrogative: false
 		}
 
 		this.handle_audio = this.handle_audio.bind( this );
@@ -57,13 +58,22 @@ export class Lessons extends Component {
 		this.setState( { marginLeft: -61 } );
 	}
 
+	handle_interrogative ( ev ) {
+		ev.preventDefault();
+		var interrogative =
+			this.state.interrogative === false
+				? true : false;
+		this.setState( { interrogative: interrogative } );
+	}
+
 	render () {
 		let page;
 		var Page = this.props.page;
 		switch ( Page ) {
 			case 'Present':
 				page =
-					<Present theme={ this.props.theme.content } hideAudio={ this.state.hide_audio }
+					<Present theme={ this.props.theme.content }
+						hideAudio={ this.state.hide_audio } interrogative={ this.state.interrogative }
 						hideExercise={ this.state.hide_exercises } hideVerb={ this.handle_listVerb } />;
 				break;
 			case 'Past':
@@ -103,7 +113,7 @@ export class Lessons extends Component {
 		return (
 			<>
 				<div id='principal-div'>
-					<aside id='menu-aside'>
+					<aside className='menu-aside'>
 						<nav style={ { marginLeft: this.state.marginLeft } }
 							onMouseLeave={ ( e ) => this.handle_mouseLeave( e ) }
 							onMouseOver={ ( e ) => this.handle_mouseOver( e ) }>
@@ -120,10 +130,17 @@ export class Lessons extends Component {
 								<button type='button' onClick={ this.handle_listVerb } className='menu-btn'>
 									Verbos{ ' ' } <FontAwesomeIcon color='rgb(10 10 68)' icon={ faList } />
 								</button>
+
+								<button type='button'
+									onClick={ this.handle_interrogative.bind( this ) }
+									className='menu-btn'>
+									Interro.
+									{ ' ' }
+									<FontAwesomeIcon color='rgb(188 10 10)' icon={ faQuestion } />
+								</button>
 							</menu>
 						</nav>
 					</aside>
-
 					<div id='content-div'>
 						{ page }
 					</div>
