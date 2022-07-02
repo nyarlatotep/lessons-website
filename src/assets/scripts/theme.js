@@ -7,7 +7,7 @@ export const Themes = {
 			color: "#eee"
 		},
 		content: {
-			backgroundColor: "rgb(80 80 80 / 95%)",
+			backgroundColor: "rgb(80 80 80 / 75%)",
 			color: "rgb(220 220 220)"
 		}
 	},
@@ -17,7 +17,7 @@ export const Themes = {
 			color: "#111"
 		},
 		content: {
-			backgroundColor: "rgba(180 180 180 / 95%)",
+			backgroundColor: "rgba(180 180 180 / 75%)",
 			color: "rgb(5 5 5)"
 		}
 	}

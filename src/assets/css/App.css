@@ -6,6 +6,11 @@
 body {
 	margin: auto;
 	height: auto;
+	background-image: url(../img/blacky.jpg);
+	background-size: 750px 690px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
 }
 
 button {
