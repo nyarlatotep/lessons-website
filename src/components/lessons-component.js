@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileAudio, faSchool, faList, faQuestion} from '@fortawesome/free-solid-svg-icons';
+import { faFileAudio, faSchool, faList, faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 import { Present } from '../lessons/present';
 import { Past } from '../lessons/past';
@@ -10,6 +10,8 @@ import { Grammar } from '../lessons/grammar';
 import { Notes } from '../lessons/notes';
 import { Texts } from '../lessons/text';
 import { Tests } from '../lessons/test';
+
+import { VerbsList } from '../components/verbs-list'
 
 export class Lessons extends Component {
 	static name = Lessons.name;
@@ -26,7 +28,7 @@ export class Lessons extends Component {
 
 		this.handle_audio = this.handle_audio.bind( this );
 		this.handle_exercises = this.handle_exercises.bind( this );
-		this.handle_audio = this.handle_listVerb.bind( this );
+		this.handle_listVerb = this.handle_listVerb.bind( this );
 	};
 
 	handle_exercises () {
@@ -141,14 +143,17 @@ export class Lessons extends Component {
 							</menu>
 						</nav>
 					</aside>
+
 					<div id='content-div'>
 						{ page }
-					</div>
 
+						<aside id='verbs-list' hidden={ this.state.hide_verb }>
+							<VerbsList />
+						</aside>
+
+					</div>
 				</div>
 			</>
 		);
 	};
-
 }
-
