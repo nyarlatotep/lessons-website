@@ -4,6 +4,7 @@ import { ThemeContext, Themes } from '../assets/scripts/theme';
 
 import { Header } from './principal';
 import { Lessons } from './lessons-component'
+import ChatRoom from '../chatroom/App';
 
 import { faMountainSun, faCloudMoonRain } from '@fortawesome/free-solid-svg-icons';
 import { faDog, faDolly, faStar, faHandsBubbles, faFileText, faQuidditchBroomBall } from '@fortawesome/free-solid-svg-icons';
@@ -16,7 +17,8 @@ export class Main extends Component {
 
 		this.state = {
 			theme: Themes.light,
-			page: 'Present'
+			page: 'Present',
+			component: null,
 		};
 
 		this.toogle_theme = () => {
@@ -64,6 +66,15 @@ export class Main extends Component {
 
 		ev.preventDefault();
 	};
+
+	handle_chatroom () {
+		var component =
+			this.state.component === null
+				? <ChatRoom theme={ this.state.theme } /> : null;
+		this.setState( {
+			component: component,
+		} )
+	}
 
 	componentDidUpdate = () => this.handle_section;
 
@@ -117,10 +128,21 @@ export class Main extends Component {
 				} ) }
 			</menu>
 
+		const chatroomBtn =
+			<button type='button'
+				id='chat-btn'
+				onClick={ ( e ) => this.handle_chatroom( e ) }>
+				Chat
+			</button>
+
 		return (
 			<>
 				<ThemeContext.Provider value={ this.state.theme }>
-					<Header button={ Button } theme={ this.state.theme } menu={ MenuBtns } />
+					<Header
+						button={ Button }
+						theme={ this.state.theme }
+						menu={ MenuBtns } chatroom={ chatroomBtn } />
+					{ this.state.component }
 					<Lessons theme={ this.state.theme } page={ this.state.page } />
 				</ThemeContext.Provider>
 			</>

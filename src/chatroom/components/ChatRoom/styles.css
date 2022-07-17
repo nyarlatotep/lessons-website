@@ -1,0 +1,10 @@
+.messages-container {
+	border: 1px solid var(--color-gray);
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	overflow: hidden;
+	padding: 16px;
+	width: 100%;
+}

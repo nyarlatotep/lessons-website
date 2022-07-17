@@ -115,7 +115,8 @@ li {
 			z-index: 0;
 		}
 
-#theme-btn {
+#theme-btn,
+#chat-btn {
 	border-top: 3px rgb(150 160 160 / 90%) groove;
 	border-bottom: 3px rgb(150 160 160 / 90%) ridge;
 	border-left: 3px rgb(150 160 160 / 90%) groove;
@@ -130,6 +131,10 @@ li {
 	top: 15px;
 	text-align: center;
 	width: 30px;
+}
+
+#chat-btn {
+	margin-right: 5px;
 }
 
 .description {
